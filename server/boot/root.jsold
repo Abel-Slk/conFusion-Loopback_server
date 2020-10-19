@@ -1,0 +1,16 @@
+// renamed the root.js file as root.jsold - don't need this anymore in our application because we want to ensure that our server is saving up the contents from the client folder. So we add the images to the client folder and then in middleware.json change the "files" part to be like this:
+// "files": {
+//   "loopback#static": {
+//     "params": "$!../client"
+//   }
+// }
+// this indicates that the Loopback server will be saving up static content from the client folder
+
+'use strict';
+
+module.exports = function(server) {
+  // Install a `/` route that returns server status
+  var router = server.loopback.Router();
+  router.get('/', server.loopback.status());
+  server.use(router);
+};
