@@ -58,7 +58,7 @@ module.exports = function(app) { // The app is the Loopback app, which will be s
                                     );
                                 }
                             }
-                        )
+                        );
                     }
                 )
             }
